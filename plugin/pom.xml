@@ -12,6 +12,38 @@
 	<packaging>pom</packaging>
 
 	<build>
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadoc</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+					<source>1.8</source>
+					<doclet>com.buschmais.jqassistant.asciidoc.ModelDoclet</doclet>
+					<docletArtifact>
+						<groupId>com.buschmais.jqassistant</groupId>
+						<artifactId>jqassistant.build.modeldoc</artifactId>
+						<version>${project.version}</version>
+					</docletArtifact>
+					<links>
+						<link>http://maven.apache.org/ref/${org.apache.maven_version}/apidocs/</link>
+					</links>
+                    <additionalparam>
+						-Xdoclint:none 
+<!--						-targetFolder ../jqassiatant/plugindoc-->
+					</additionalparam>
+                    <excludePackageNames>*.schema.*</excludePackageNames>
+                </configuration>
+            </plugin>
+		</plugins>
 		<pluginManagement>
 			<plugins>
 				<plugin>
