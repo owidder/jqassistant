@@ -27,9 +27,9 @@
                 </executions>
                 <configuration>
 					<source>1.8</source>
-					<doclet>com.buschmais.jqassistant.asciidoc.ModelDoclet</doclet>
+					<doclet>com.buschmais.jqassistant.build.modeldoc.ModelDoclet</doclet>
 					<docletArtifact>
-						<groupId>com.buschmais.jqassistant</groupId>
+						<groupId>com.buschmais.jqassistant.build</groupId>
 						<artifactId>jqassistant.build.modeldoc</artifactId>
 						<version>${project.version}</version>
 					</docletArtifact>
@@ -37,7 +37,7 @@
 						<link>http://maven.apache.org/ref/${org.apache.maven_version}/apidocs/</link>
 					</links>
                     <additionalparam>
-						-Xdoclint:none 
+						-Xdoclint:none
 <!--						-targetFolder ../jqassiatant/plugindoc-->
 					</additionalparam>
                     <excludePackageNames>*.schema.*</excludePackageNames>
