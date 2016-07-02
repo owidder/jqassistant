@@ -168,8 +168,8 @@ public class ClassVisitor extends org.objectweb.asm.ClassVisitor {
 
     @Override
     public AnnotationVisitor visitAnnotation(final String desc, final boolean visible) {
-        AnnotationValueDescriptor annotationDescriptor = visitorHelper.addAnnotation(cachedType, cachedType.getTypeDescriptor(), SignatureHelper.getType(desc));
-        return new AnnotationVisitor(cachedType, annotationDescriptor, visitorHelper);
+        AnnotationTypeDescriptor annotationTypeDescriptor = visitorHelper.addAnnotation(cachedType, cachedType.getTypeDescriptor(), SignatureHelper.getType(desc));
+        return new AnnotationVisitor(cachedType, annotationTypeDescriptor, visitorHelper);
     }
 
     @Override

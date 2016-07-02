@@ -17,5 +17,5 @@ public interface AnnotatedDescriptor extends Descriptor {
      * @return The annotations this descriptor is annotated by.
      */
     @Relation("ANNOTATED_BY")
-    List<AnnotationValueDescriptor> getAnnotatedBy();
+    List<AnnotationTypeDescriptor> getAnnotatedBy();
 }
